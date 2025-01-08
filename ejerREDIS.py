@@ -6,15 +6,21 @@ client = redis.Redis(connection_pool=conexionRedis)
 client.flushdb()
 
 # 1. Crear registros clave-valor
+print("EJERCICIO 1 --------------------- ")
+
 client.set("sensor1", "activo")
 client.set("sensor2", "inactivo")
 print("Registros creados.")
 
 # 2. Obtener y mostrar el número de claves registradas
+print("EJERCICIO 2 --------------------- ")
+
 num_keys = len(client.keys())
 print(f"Número de claves registradas: {num_keys}")
 
 # 3. Obtener y mostrar un registro en base a una clave
+print("EJERCICIO 3 --------------------- ")
+
 value = client.get("sensor1")
 print(f"Registro obtenido: sensor1 -> {value}")
 
